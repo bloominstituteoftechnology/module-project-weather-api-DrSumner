@@ -41,7 +41,7 @@ function Getday(dateString){
     var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     
     // Use getDay() method to get the day of the week (0-6)
-    var dayOfWeek = date.getDay();
+    var dayOfWeek = date.getUTCDay();
     
     // Return the name of the day corresponding to the index obtained
     return days[dayOfWeek];
@@ -56,7 +56,7 @@ dropMenu.addEventListener( 'change', evt => {
   axios
   .get(url + dropMenu.options[selectedIndex].text)
   .then((res) => {
-    //console.log(res.data)
+    console.log(res.data)
     wait.textContent = ''
     dropMenu.disabled = false
     weatherWid.style.display = 'block'
